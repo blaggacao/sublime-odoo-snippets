@@ -1,15 +1,23 @@
 <snippet>
     <content><![CDATA[
-<!-- VIEWS: "${1:Human readable name}"
+<!--
 
-    - Model·········: ${2:model}
-    - _rec_name·····: ${3:name}
-    - Domain········: ${4:[]}
-    - Context·······: ${5:\{\}}
-    - Parent menu ··: ${6:base.menu_custom}
-    - View priority·: ${7:16}    Sequence····: ${8:10}
-    - Action help···: ${9:There are not any record for ${3/(.)/$1/g}}
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+${1:Human readable name}
+${1/./=/g}
+
+Views
+
+- - - - - - - - - ${9/((..)|(.))/(?2:-\ )(?3:-)/g}
+- Model·········: ${2:model}
+- _rec_name·····: ${3:name}
+- Domain········: ${4:[]}
+- Context·······: ${5:\{\}}
+- Parent menu ··: ${6:base.menu_custom}
+- View priority·: ${7:16}    Sequence····: ${8:10}
+- Action help···: ${9:There are not any record for ${3/(.)/$1/g}}
+- - - - - - - - - ${9/((..)|(.))/(?2:-\ )(?3:-)/g}
+
+-->
 
 <!-- Tree view for "${2/(.)/\1/g}" -->
 <record id="view_${2/\./\_/g}_tree" model="ir.ui.view">
